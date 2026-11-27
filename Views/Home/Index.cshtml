@@ -1,0 +1,17 @@
+@{
+    ViewData["Title"] = "Home";
+}
+
+<div class="text-center py-5">
+    <h1>CrudApplication</h1>
+    <p class="lead">Manage your products. Sign in with Google to get started.</p>
+
+    @if (User.Identity != null && User.Identity.IsAuthenticated)
+    {
+        <a class="btn btn-primary" asp-controller="Products" asp-action="Index">Go to my products</a>
+    }
+    else
+    {
+        <a class="btn btn-primary" asp-controller="Account" asp-action="Login">Sign in</a>
+    }
+</div>

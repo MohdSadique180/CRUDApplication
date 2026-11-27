@@ -1,0 +1,15 @@
+@model ProductForm
+@{
+    ViewData["Title"] = "Edit product";
+}
+
+<h1 class="h3 mb-3">Edit product</h1>
+
+<form asp-action="Edit" asp-route-id="@ViewData["Id"]" method="post" style="max-width: 500px;">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+    <partial name="_ProductFields" model="Model" />
+
+    <button type="submit" class="btn btn-primary">Update</button>
+    <a class="btn btn-secondary" asp-action="Index">Cancel</a>
+</form>
